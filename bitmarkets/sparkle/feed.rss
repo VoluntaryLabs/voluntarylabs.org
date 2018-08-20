@@ -1,0 +1,17 @@
+ <item>
+    <title>Version 0.8 beta</title>
+    <description><![CDATA[
+        Initial beta release.
+    ]]>
+    </description>
+    <sparkle:releaseNotesLink>
+        https://voluntary.net/bitmarkets/
+    </sparkle:releaseNotesLink>
+    <pubDate>Fri, 25 Jul 2014 19:20:11 +0000</pubDate>
+    <sparkle:minimumSystemVersion>10.9</sparkle:minimumSystemVersion>
+    <enclosure url="https://voluntary.net.s3.amazonaws.com/Bitmarkets_0.8beta.zip"
+               sparkle:version="2.0"
+               sparkle:dsaSignature="MC0CFBfeCa1JyW30nbkBwainOzrN6EQuAh=" <!-- if you're not code signing -->
+               length="1623481"
+               type="application/octet-stream" />
+</item>

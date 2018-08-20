@@ -1,0 +1,351 @@
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track-piece {
+            background-color: #fff;
+        }
+
+        ::-webkit-scrollbar-thumb:vertical {
+            background-color: #ddd;
+        }
+
+
+        body {
+            position: absolute;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            border: 0px;
+            background-color: #fff;
+            zoom: 100%;
+
+            /* text-size-adjust fixes issue with contenteditable fonts being tiny */
+            text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+
+            font-family: "Proxima N W01 Thin Reg", "Helvetica", "Sans-Serif";
+            /* -webkit-font-smoothing: antialiased;*/
+            color: white;
+            text-align: center;
+        }
+
+        .Page {
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 100px;
+            padding-right: 100px;
+            padding-top: 180px;
+            padding-bottom: 0px;
+            height: 100%;
+            text-align: left;
+
+            border: 0px dashed yellow;
+        }
+
+        .PageHeader {
+            margin: 0px;
+            padding-bottom: 35px;
+            text-align: left;
+            border-bottom: 0px #555 solid;
+        }
+
+        .PageTitle {
+            font-family: "Proxima N W01 Smbd", "Open Sans", "Helvetica", "Sans-Serif";
+            font-size: 1.9em;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 0px dashed yellow;
+            white-space: nowrap;
+            padding-bottom: 5px;
+            /*padding-bottom: 25px;*/
+        }
+
+        .PageTitleSuffix {
+            font-family: "Proxima N W01 Light", "Open Sans", "Helvetica", "Sans-Serif";
+            display: inline-block;
+            color: #bbb;
+            margin-left: 1px;
+        }
+
+        .PageSubtitle {
+            font-family: "Proxima N W01 Smbd", "Open Sans", "Helvetica", "Sans-Serif";
+            display: block;
+            letter-spacing: 0.5px;
+            color: #000;
+            font-size: 15px;
+            text-transform: capitalize;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            /*
+            -webkit-font-smoothing: antialiased;
+            */
+        }
+        
+        .PageSubtitleComponent {
+            display: inline-block;
+            color: #aaa;
+        }
+
+        
+        .PageSubtitleComponent:hover {
+            color: #000;
+        }
+        
+        .PageSubtitleComponentDivider {
+            display: inline-block;
+            color: #aaa;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        
+        .PageSubtitleComponent_Selected {
+            display: inline-block;
+            color: #000;
+        }
+
+        .PageMenus {
+            display: block;
+            border: 0px dashed red;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            padding: 0px;
+            text-align: left;
+        }
+
+        .PageMenu {
+            display: block;
+            font-family: "Proxima N W01 Reg", "Open Sans", "Helvetica", "Sans-Serif";
+            text-transform: capitalize;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            text-align: left;
+            width: 100px;
+
+            padding-top: 0px;
+            padding-bottom: 4px;
+            padding-left: 0px;
+            padding-right: 6px;
+
+            margin-top: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            margin-right: auto;
+
+
+
+            border: 0px dashed #aaa;
+            color: #aaa;
+            transition: 0.2s ease-in-out;
+        }
+
+        .PageMenu:hover {
+            color: black;
+        }
+
+        .PageMenu_Selected {
+            color: black;
+        }
+
+
+        .Content {
+            font-family: "Proxima N W01 Light", "Proxima N W01 Reg";
+            display: block;
+            overflow: hidden;
+            max-width: 600px;
+
+            /*
+            color: rgb(136, 136, 136);
+            */
+            color: #000;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.6;
+            text-align: left;
+            border: 0px dashed blue;
+
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 100px;
+        }
+
+        .Button {
+            font-family: "Proxima N W01 Reg";
+            display: inline-block;
+            padding-top: 6px;
+            padding-bottom: 8px;
+            margin-right: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #000;
+
+            border: 1px solid rgb(104, 104, 104);
+            width: 150px;
+            border-radius: 4px;
+            -webkit-font-smoothing: antialiased;
+            text-transform: uppercase;
+            transition: 0.15s ease-in-out;
+        }
+
+        .Button:hover {
+            color: #fff;
+            background-color: #222;
+        }
+
+        .Paragraph {
+            font-family: "Proxima N W01 Reg";
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-transform: none;
+            font-size: 15px;
+            color: #000;
+            max-width: 600px;
+        }
+        
+        .ProductTitle {
+            display: none;
+            font-family: "Proxima N W01 Smbd";
+            letter-spacing: 1px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            text-transform: none;
+            font-size: 15px;
+            color: #000;
+        }
+        
+        .ProductSubtitle {
+            display: none;
+            font-family: "Proxima N W01 Light";
+            letter-spacing: 1px;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            text-transform: none;
+            font-size: 15px;
+            color: #000;
+        }
+        
+        .ProductDescription {
+            font-family: "Proxima N W01 Reg";
+            letter-spacing: 0px;
+            margin-top: 0px;
+            margin-bottom: 35px;
+            text-transform: none;
+            font-size: 15px;
+            color: #000;
+        }
+
+        .ProductDescription_SectionTitle {
+            display: block;
+            font-family: "Proxima N W01 Smbd";
+            letter-spacing: 1px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            text-transform: capitalize;
+            font-size: 15px;
+            color: #000;
+        }
+
+        .ProductDescription_SectionContent {
+            font-family: "Proxima N W01 Reg";
+            letter-spacing: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            text-transform: none;
+            font-size: 15px;
+            color: #000;
+        }
+        
+        .ProductLink {
+            display: inline-block;
+            font-family: "Proxima N W01 Smbd";
+            letter-spacing: 0px;
+            margin-top: 0px;
+            margin-bottom: 20px;
+            text-transform: none;
+            font-size: 15px;
+            color:black;    
+            padding-right: 40px;     
+            border-left: 0px solid black;
+        }
+        
+        .ProductLink:hover {
+            color: #aaa;
+        }
+        
+        .ProductLink::before { 
+            font-family: "Proxima N W01 Reg"; 
+            content: "|";
+            padding-right: 10px;
+            color: #aaa;
+        }
+
+        .ProductImage {
+            padding-top: 20px;
+            width: 100%;
+            max-width: 600px;
+            filter: grayscale(95%);
+            opacity: 0.85;
+        }
+
+
+        .ContentTitle {
+            font-family: "Proxima N W01 Reg";
+            text-transform: uppercase;
+            letter-spacing: 3px;
+
+            font-size: 16px;
+            font-weight: 300;
+            color: #000;
+
+            letter-spacing: 2px;
+            margin-top: 40px;
+            padding-top: 10px;
+        }
+
+        a {
+            font-family: "Proxima N W01 Reg";
+            text-decoration: none;
+            color: #aaa;
+        }
+
+        a:hover {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        li {
+            line-height: 1.2em;
+            padding-left: 20px;
+            margin-left: 0px;
+            margin-bottom: 7px;
+            text-transform: lowercase;
+        }
+
+        li:before {
+            content: "·";
+            padding-right: 5px;
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 1em;
+            text-indent: -1em;
+        }
+
+        .AppIcon {
+            display: none;
+            width: 65px;
+            height: auto;
+            padding-bottom: 30px;
+            margin-bottom: 10px;
+        }

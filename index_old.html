@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=0.5, user-scalable=no">
+    <title>Voluntary.net</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet" type="text/css">
+    <link href="Fonts/_fonts.css" rel="stylesheet" type="text/css">
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track-piece {
+            background-color: #fff;
+}
+
+        ::-webkit-scrollbar-thumb:vertical {
+            background-color: #ddd;
+        }
+
+
+        body {
+            position: absolute;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            border: 0px;
+            background-color: #fff;
+            zoom: 100%;
+
+            /* text-size-adjust fixes issue with contenteditable fonts being tiny */
+            text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+
+            font-family:  "Proxima N W01 Thin Reg", "Helvetica", "Sans-Serif";
+            /* -webkit-font-smoothing: antialiased;*/
+            color: white;
+            text-align: center;
+        }
+
+        .Page {
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 80px;
+            padding-bottom: 0px;
+            height: 100%;
+
+            border: 0px dashed yellow;
+        }
+
+        .PageHeader {
+            margin: 0px;
+            padding-bottom: 35px;
+            text-align: center;
+            border-bottom: 0px #555 solid;
+        }
+
+        .PageTitle {
+            font-family: "Proxima N W01 Smbd", "Open Sans", "Helvetica", "Sans-Serif";
+            font-size: 1.9em;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 0px dashed yellow;
+            white-space: nowrap;
+            padding-bottom: 40px;
+        }
+
+        .PageTitleSuffix {
+            display: inline-block;
+            color: #999;
+            margin-left: 1px;
+        }
+
+        .PageSubtitle {
+            display: none;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #555;
+            font-size: 16px;
+            text-transform: uppercase;
+            -webkit-font-smoothing: antialiased;
+            visibility: hidden;
+        }
+
+        .PageMenus {
+            display: block;
+            float: right;
+            border: 0px dashed #aaa;
+            margin: 0x;
+            padding: 0px;
+            visibility: hidden;
+        }
+
+        .PageMenuIcon {
+            padding-top: 10px;
+            width: auto;
+            height: 30px;
+            opacity: 0.3;
+            transition: 0.3s ease-in-out;
+        }
+
+        .PageMenuIcon:hover {
+            opacity: 1;
+        }
+
+        .Subitems {
+            display: none;
+            margin-top: 0px;
+            border: 0px dashed #aaa;
+            visibility: hidden;
+        }
+
+        .SubitemPreview {
+            display: block;
+            border-left: 0px solid white;
+            max-width: 100px;
+            padding-right: 0px;
+            padding-left: 0px;
+            margin-left: 0px;
+            text-transform: uppercase;
+            margin-top: 4px;
+            margin-bottom: 4px;
+            color: #aaa;
+        }
+
+
+        .SubitemPreviewSelected {
+            color: white;
+        }
+
+        .Content {
+            font-family: "Proxima N W01 Light", "Proxima N W01 Reg";
+            display: block;
+            overflow: hidden;
+            max-width: 600px;
+
+            /*
+            color: rgb(136, 136, 136);
+            */
+            color: #000;
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.6;
+            text-align: left;
+            border: 0px dashed blue;
+
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 100px;
+        }
+
+        .Button {
+            font-family: "Proxima N W01 Reg";
+            display: inline-block;
+            padding-top: 6px;
+            padding-bottom: 8px;
+            margin-right: 20px;
+            margin-top: 20px;
+            text-align: center;
+            color:#000;
+
+            border: 1px solid rgb(104, 104, 104);
+            width: 150px;
+            border-radius: 4px;
+            -webkit-font-smoothing: antialiased;
+            text-transform: uppercase;
+            transition: 0.15s ease-in-out;
+        }
+
+        .Button:hover {
+            color:#fff;
+            background-color: #222;
+        }
+
+        .Paragraph {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-transform: none;
+        }
+
+        .ContentTitle {
+            font-family: "Proxima N W01 Reg";
+            text-transform: uppercase;
+            letter-spacing: 3px;
+
+            font-size: 16px;
+            font-weight: 300;
+            color: #000;
+
+            letter-spacing: 2px;
+            margin-top: 40px;
+            padding-top: 10px;
+        }
+
+        a {
+            font-family: "Proxima N W01 Smbd";
+            text-decoration: none;
+            color: #aaa;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        li {
+            line-height: 1.2em;
+            padding-left: 20px;
+            margin-left: 0px;
+            margin-bottom: 7px;
+            text-transform: lowercase;
+        }
+
+        li:before {
+            content: "·";
+            padding-right: 5px;
+        }
+
+        ul {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 1em;
+            text-indent: -1em;
+        }
+
+        .AppIcon {
+            width: 65px;
+            height: auto;
+            padding-bottom: 30px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="Page">
+        <img class="AppIcon" src="./images/voluntaryapp_black.svg"></img>
+        <div class="PageTitle">
+            Voluntary
+            <div class="PageTitleSuffix">NET</div>
+        </div>
+
+        <div class="Content">
+
+            <div class="Paragraph">
+                VoluntaryNet is an in-browser decentralized (not federated) platform owned and run by the users. The aim is to give users
+                complete control over their digital lives.
+            </div>
+
+            <div class="ContentTitle">
+                WORKING
+            </div>
+
+            <ul>
+                <li> Create and manage multiple identities and contacts </li>
+                <li> Private direct messaging (e.g. SMS, email, direct messages)</li>
+                <li> Public posting (e.g. twitter / FB feed posts)</li>
+                <li> Feed of public posts of contacts</li>
+            </ul>
+
+            <div class="ContentTitle">
+                IN PROGRESS
+            </div>
+
+            <ul>
+                <li> Embedded images in posts</li>
+                <li> Public post replies</li>
+                <li> Public reposts</li>
+                <li> Public post likes</li>
+            </ul>
+
+            <div class="ContentTitle">
+                PLANNED
+            </div>
+
+            <ul>
+                <li> Group chat</li>
+                <li> Public shared channels </li>
+                <li> Image, Audio, Video feeds </li>
+                <!-- (e.g. Pinterest, Podcasting, Music sharing, YouTube) -->
+                </li>
+                <li> Audio / Video Chat</li>
+                <li> Onion Routing for Privacy</li>
+                <li> Integrated cryptocurrency wallets</li>
+                <li> P2P Ecommerce</li>
+            </ul>
+
+            <div class="ContentTitle">
+                GET INVOLVED
+            </div>
+            <div class="Paragraph">
+                If you'd like to contribute, we'd could use help with the following:
+            </div>
+
+            <ul>
+                <li> Security auditing</li>
+                <li> JS, WebRTC, Node.js coding</li>
+                <li> User and developer documentation</li>
+                <li> Minimalist UI Design</li>
+                <li> Motion graphics</li>
+            </ul>
+
+            <a href="mailto:us@voluntary.net">
+                <div class="Button">Email us</div>
+            </a>
+
+            <div class="ContentTitle">
+                </div>
+                <div class="Paragraph">
+                    Our previous projects can be found <a href="projects.html">here</a>.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

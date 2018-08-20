@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+      <meta name="viewport" content="initial-scale=0.5, user-scalable=no">
+      <title>Voluntary - Bitmarkets</title>
+      <!-- Styling / Fonts -->
+      <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen">
+      <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+      <script type='text/javascript' src='http://fiddle.jshell.net/js/lib/mootools-core-1.3.1-full-compat.js'></script>
+      <script type='text/javascript'>
+         window.addEvent('load', function() {
+         $(".toggle_container").hide();
+             
+             $("p.trigger").click(function(){
+                 $(this).toggleClass("active").next().slideToggle("normal");
+             });
+         });
+         
+      </script>
+   </head>
+   <body>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+      <!-- Main Page Elements -->
+      <div id="appcontainer">
+         <div id="vertcontainer">
+            <div id="iconcontainer">
+               <a href="/bitpost">
+                  <div class="linkcontainer">
+                     <div id="icontainer">
+                        <div class="iconbox">
+                           <div class="details">
+                              <div class="iconbg1 iconshared"></div>
+                           </div>
+                           <div class="icontest"><img src="../images/icon1a.svg"></div>
+                        </div>
+                     </div>
+                     <div class="title">Bitpost</div>
+                  </div>
+               </a>
+               <a href="/bitmarkets">
+                  <div class="linkcontainer">
+                     <div id="icontainer">
+                        <div class="iconbox">
+                           <div class="details">
+                              <div class="iconbg2 iconshared"></div>
+                           </div>
+                           <div class="icontest"><img src="../images/icon2b.svg"></div>
+                        </div>
+                     </div>
+                     <div class="title">Bitmarkets</div>
+                  </div>
+               </a>
+               <a href="/crypt">
+                  <div class="linkcontainer">
+                     <div id="icontainer">
+                        <div class="iconbox">
+                           <div class="details">
+                              <div class="iconbg3 iconshared"></div>
+                           </div>
+                           <div class="icontest"><img src="../images/icon3a.svg"></div>
+                        </div>
+                     </div>
+                     <div class="title">Crypt</div>
+                  </div>
+               </a>
+               <div class="linkcontainer">
+                  <div id="icontainer">
+                     <div class="iconbox">
+                        <div class="details">
+                           <div class="iconbg4 iconshared"></div>
+                        </div>
+                        <div class="icontest"><img src="../images/icon4a.svg"></div>
+                     </div>
+                  </div>
+                  <div class="titleSoon">
+                     <span data-time="1414368000" class="kkcountdown-1">
+                        <noscript>Soon</noscript>
+                     </span>
+                  </div>
+               </div>
+               <div class="linkcontainer">
+                  <div id="icontainer">
+                     <div class="iconbox">
+                        <div class="details">
+                           <div class="iconbg5 iconshared"></div>
+                        </div>
+                        <div class="icontest"><img src="../images/icon5a.svg"></div>
+                     </div>
+                  </div>
+                  <div class="titleSoon">
+                     <span data-time="1419638400" class="kkcountdown-1">
+                        <noscript>Soon</noscript>
+                     </span>
+                  </div>
+               </div>
+               <div class="linkcontainerright">
+                  <div id="icontainer">
+                     <div class="iconbox">
+                        <div class="details">
+                           <div class="iconbg6 iconshared"></div>
+                        </div>
+                        <div class="icontest"><img src="../images/icon6a.svg"></div>
+                     </div>
+                  </div>
+                  <div class="titleSoon">
+                     <span data-time="1422748800" class="kkcountdown-1">
+                        <noscript>Soon</noscript>
+                     </span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- App Information -->
+      <div id="pagecontainer">
+      <div id="textcontainer">
+      <div class="apptitle">Bitmarkets</div>
+      <div class="appsubtitle">Peer to peer marketplaces</div>
+      <div class="docs_section_title_1">Introduction</div>
+      <div class="docs_section_1">
+         Bitmarkets is a free and open source protocol and example client for a decentralized marketplace which uses <a href="http://bitcoin.org/">Bitcoin</a> as it's currency and <a href="http://bitmessage.org/">Bitmessage</a> as it's communications transport protocol. Mutual security deposits between buyer and seller on individual transactions are used ensure incentives are aligned for completing the transaction without the need for either reputation systems or trusted 3rd parties.
+         <br><br>
+         This document is a non-technical overview of how the Bitmarkets client and protocol work. For a more technical details, see the <a href="http://voluntary.net/bitmarkets/protocol_specification.html">Bitmarkets protocol specification</a>.  
+         <!--
+         The Bitmarkets client and protocol are free and open source software.
+     -->
+      </div>
+      <div class="docs_section_title_1">Motivation</div>
+      <div class="docs_section_1">
+         <!--
+            In the past, market transactions were done with anonymous payment systems such as coins and paper cash and could be done without recording the transaction history of the buyer.
+            -->
+         The current state of commerce is one of centralized marketplaces and payment services that extract high fees, impose and abuse excessive control and remove any hope of privacy from users.
+         <!--
+            The use of anonymous payment systems such as coins and paper cash is disappearing as an option for many products.
+            -->
+         As more commerce moves online many consumers may find their lifetime history of purchases (including books, personal items and location details) for sale to advertisers, employers, stalkers, curious neighbors, political opponents and government agencies. 
+         <br><br>
+         An ideal system would be one of secure private transactions directly between producers and consumers without middle men collecting data or adding fees. Such systems are now feasible by combining recently developed technologies for anonymous decentralized payments and anonymous decentralized messaging.
+      </div>
+      <div class="docs_section_title_1">Terms</div>
+      <div class="docs_section_1">
+         <p style="margin-left:0px; padding-left:25px;">
+            <a href="http://en.wikipedia.org/wiki/Bitcoin">Bitcoin</a> - an anonymous p2p digital currency<br>
+            <a href="http://en.wikipedia.org/wiki/Bitmessage">Bitmessage</a> - an anonymizing encrypted p2p messaging network<br>
+            <a href="http://en.wikipedia.org/wiki/Tor_(anonymity_network)">Tor</a> - a communication network that conceals user's locations<br>
+            <a href="http://en.wikipedia.org/wiki/Tor_(anonymity_network)">Bitmarkets client</a> - an application used to buy/sell on Bitmarkets<br>
+         </p>
+      </div>
+      <div class="docs_section_title_1">Implementation</div>
+      <div class="docs_section_1"></div>
+      <div class="docs_section_title_2">Client</div>
+      <div class="docs_section_1">
+         To use the marketplace, a client application which implements the Bitmarkets protocol is needed. The client is used to post, browse and execute transactions and contains a bitcoin wallet which is used to construct the multi-signature two-party escrow transactions used for security deposits, payments and refunds. 
+      </div>
+      <div class="docs_section_title_2">Identities</div>
+      <div class="docs_section_1">
+         The client uses the Bitmessage anonymous decentralized messaging network and Tor (a source location hiding communications network)  to broadcast sales and exchange transaction related messages. Upon starting the client, a Bitmessage identity (a public encryption key) is generated which, like an email address, will be used for communications on the network. 
+      </div>
+ 
+      <div class="docs_section_title_2">Depositing Funds</div>
+      <div class="docs_section_1">
+      In order to complete a transaction, both buyer and seller must have sufficient funds in their wallets for escrow and payment. The client contains a Bitcoin wallet in which these funds can be deposited and withdrawn.
+      </div>
+           
+      <div class="docs_section_title_2">Posting Sales</div>
+      <div class="docs_section_1">
+         Using the client, a seller specifies the region, category, title, description and price and broadcasts this to a specific Bitmessage channel. These posts are then relayed throughout the Bitmessage network where other clients see them and make them browsable by buyers.
+      </div>
+      
+      <div class="docs_section_title_2">Requesting a Purchase</div>
+      <div class="docs_section_1">
+         Using the client, buyers can browse regions and categories to find products/services for sale. If/when they choose an item to buy, the client sends a Bitmessage to the requesting a purchase. 
+      </div>
+      
+      <div class="docs_section_title_2">Accepting/Rejecting a Purchase</div>
+      <div class="docs_section_1">
+         If the seller accepts a purchase request, an accept message is sent to the buyer and the client automatically sends reject messages to any other purchase requesters.
+      </div>
+      <div class="docs_section_title_2">Escrow Lock</div>
+      <div class="docs_section_1">
+ After receiving the acceptance message, the buyer's client constructs the first half of the escrow lock transaction which contains their security deposit and payment and sends this to the seller. On receiving this message, the seller's client adds their own e
+ </div>
+ 
+<div class="docs_section_title_1">Escrow System</div>
+<div class="docs_section_1">
+
+ </div>
+ 
+<div class="docs_section_title_2">Problems with 3rd Party Escrow</div>
+<div class="docs_section_1">
+
+</div>
+ 
+<div class="docs_section_title_2">Choice of Escrow Ratios</div>
+      <div class="docs_section_1">
+      The purpose of escrow is to ensure both parties have sufficiently strong incentives to complete transactions. The approach of this analysis is to look at critical limits in order to extrapolate a conservative range of escrow ratios that ensure a functioning market.
+      <!--
+       For simplicity, it's assumed a functioning market is one where consistently malicious actors will on average go bankrupt assuming their bankroll is small compared to the volume of the market.
+       -->
+      
+  </div>
+  
+       <div class="docs_section_title_2">Simplifying Assumptions</div>
+      <div class="docs_section_1">
+It's assumed a functioning market is one where consistently malicious actors will on average go bankrupt assuming their bankroll is small compared to the volume of the market. It's also assumed this is an efficient market where margins are low so seller profit margins are small enough to ignore (i.e. for our conservative escrow estimates to cover). 
+      </div>  
+      
+      <div class="docs_section_title_2">No Deposits</div>
+      <div class="docs_section_1">
+      With no deposits, an anonymous buyer has no direct economic incentive to complete the payment on delivery of the purchased item and even a single malicious buyer could bring down the entire market by ordering all items and not paying for any of them. Likewise, a single malicious seller might burry the market with fake sales which are never delivered. So our deposit must be greater than zero for a market to reliably function in the absence of a reputation system or trusted 3rd party escrow.
+      </div>  
+      
+      <div class="docs_section_title_2">High Deposits</div>
+      <div class="docs_section_1">
+      The larger the ratio of mutual security deposit to payment, the greater incentive each side has to faithfully complete the transaction until the value becomes so large that one or both sides find in too costly to withhold escrow release to punish the other side for not completing the transaction and may accept being defrauded in order to minimize their losses.
+      <br><br>
+      <!--
+    </div>
+      <div class="docs_section_title_2">High Deposits</div>
+      <div class="docs_section_1"> 
+          -->
+          
+      The picture so far is that possible losses on both side should be above zero but not above the amount either party is willing to loose in order to satisfy punitive motivations.
+                 
+      The results of the <a href="http://en.wikipedia.org/wiki/Ultimatum_game">Ultimatum game</a> economic experiments provide some hints about how humans asses p
+      
+      
+       an offer of 50% is common and offers below 20% are more often rejected than accepted. 
+      <br><br>            
+      
+      Terms
+      <ul>
+          <li> X - price of item (the good or service)</li>
+          <li> R - escrow to item price ratio</li>
+      </ul>
+      There is a spectrum of fraud situations but for simplicity (and because the client only offers full refunds or payments as options) only the following two will be considered for now and discuss the issue of the quality of the item delivered later.
+  </div>
+  
+      <div class="docs_section_title_2">Seller Fraud - Fraudulent Payment Request</div>
+      <div class="docs_section_1">
+      The seller fails to deliver item and requests payment.
+      <br><br>
+      Buyer stands to loose: (1+R)*X (their escrow plus their payment)<br>
+      Seller stands to loose: R*X (their escrow)
+      </div>
+      
+      <div class="docs_section_title_2">Buyer Fraud - Fraudulent Refund Request</div>
+      <div class="docs_section_1">
+     The seller delivers acceptable item but the buyer requests a refund.
+      <br><br>
+      Buyer stands to loose: R*X (their escrow)<br>
+      Seller stands to loose: (1+R)*X 
+
+
+      
+      
+      <br><br>
+      For the first version of the Bitmarkets client we choose to use a 1-1 ratio as item cost to per-party security deposit. That is, for a item costing X, the escrow transaction locks 2X (1X for deposit and 1X for payment) from the buyer and 1X from the seller - a total of 3X. 
+      
+     
+      
+      <br><br>
+      </div>
+      
+      <div class="docs_section_title_1">Delivery</div>
+      <div class="docs_section_1">
+         ...
+      </div>
+      <div class="docs_section_title_1">Escrow Release</div>
+      <div class="docs_section_1">
+         ...
+         
+               <br><br><br><br>
+      <br><br><br><br>
+      </div>
+      <!--
+         <div class="docs_section_title_1">Escrow Lock</div>
+         If the seller accepts a purchase request, buyer and seller together construct a bitcoin escrow lock transaction where each adds a security deposit and the buyer adds the payment amount. This transaction is constructed such that the funds are unspendable by both parties until both sign another transaction to release the funds. 
+         <br>
+         
+             <div class="docs_section_title_2">SellLockEscrowMsg</div>
+             Sent from seller to buyer.
+             Contains incomplete multi-signature transaction with sellers unspent inputs.<br>
+         
+         
+             <div class="docs_section_title_2">BuyLockEscrowMsg</div>
+             Sent from buyer to seller. 
+             Contains the the multi-signature transaction including the buyer's inputs and signature.
+             When the seller receives this message, they add their signature to the transaction and broadcast it to the bitcoin network.<br>
+             
+         <div class="docs_section_title_1">Delivery</div>
+         After the buyer's client sees that the lock escrow transaction is confirmed in the bitcoin blockchain, they are prompted to send the seller their delivery details.
+         
+         <div class="docs_section_title_1">Payment</div>
+         After the seller provides the good or service to the buyer, the buyer constructs an escrow release transaction which sends the security deposits back to their respective parties and sends the payment to the seller. The seller can then sign this transaction and broadcast it to the bitcoin network to accept payment.
+         <br>
+         
+             <div class="docs_section_title_2">SellAcceptPaymentEscrowMsg</div>
+             Sent from seller to buyer with completed payment transaction. <br>
+             Buyer broadcasts this on bitcoin network.<br>
+             
+         <div class="docs_section_title_1">Refund</div>
+         If the good or service is not provided, the seller can construct a refund request which returns the security deposits to their respective parties and returns the payment to the buyer. If the seller chooses, they can then sign this transaction and broadcast it to the bitcoin network to refund the payment.
+         <br>
+         <br><br><br><br>
+         <br><br><br><br>
+         </div>
+         <hr class=hrfade>
+         </hr>
+         
+         NOTES: Bitmessage spam protection, 
+         -->
+
+   
+</div></div></body></html>

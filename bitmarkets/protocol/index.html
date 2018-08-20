@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>BitMarkets - Protocol</title>
+      <!-- Styling / Fonts -->
+      <link rel="stylesheet" type="text/css" href="/css2/bjqs.css" media="screen">
+      <link rel="stylesheet" type="text/css" href="/css2/style.css" media="screen">
+      <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen">
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+      <!--JS-->
+      <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+      <script src="/js/bjqs-1.3.js"></script>
+      <script src="/js/scrolling.js"></script>
+      <!-- Icons -->
+      <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png">
+      <link rel="shortcut icon" href="https://bitmarkets.org/icon_16x16.ico">
+      <!-- Getting Meta -->
+      <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+      <meta property="og:title" content="BitMarkets - P2P Marketplaces">
+      <meta property="og:url" content="https://voluntary.net/bitmarkets/">
+      <meta property="og:image" content="https://bitmarkets.org/assets/social.png">
+      <meta property="og:description" content="Description Here">
+      <meta property="og:site_name" content="BitMarkets">
+      <meta property="twitter:site" content="BitMarkets">
+      <meta property="twitter:title" content="BitMarkets - P2P Marketplaces">
+      <meta property="twitter:description" content="BitMarkets - P2P Marketplaces. Buy and sell anything with Bitcoin.">
+      <meta property="twitter:image:src" content="https://bitmarkets.org/assets/social.png">
+      <meta property="twitter:image:width" content="1200">
+      <meta property="twitter:image:height" content="1200">
+      <style>
+      .MsgIndexSection {
+          margin-left: 20px;
+          margin-top: 5px;
+          font-weight: bold;
+          color: #888;
+      }
+      .MsgIndexLink {
+          margin-left: 40px;
+      }
+      
+      .MsgIndexLink a {
+      }
+      </style>
+   </head>
+   <body>
+      <div id="container">
+      <!-- ..........Header Start.......... -->
+      <div class="header border">
+         <div class="box_990">
+            <div class="logo"><img src="/images2/logo.svg"></div>
+            <a href="../"><span class="logotext">BitMarkets</span></a>
+            <span class="logotext" style="color:#777; margin-left:10px;">Protocol</span>
+            <div class="menu menutext">
+               <!--
+                  <a href="index.html" class="linkspace">TOUR</a>
+                  <a href="info.html" class="linkspace">INFO</a>
+                  <a class="button menubutton" href="index.html#download">DOWNLOAD</a>
+                                    -->
+            </div>
+         </div>
+      </div>
+      <!-- ..........Header End.......... -->
+      <!-- ..........Intro Start.......... -->
+      <!-- App Information -->
+      <div id="pagecontainer" style="text-align:left;">
+         <div id="textcontainer" style="margin-bottom:0px;">
+      <!--
+         <div class="apptitle">Bitmarkets Protocol</div>
+         <div class="appsubtitle">A P2P protocol for decentralized marketplaces</div>
+                              -->
+      <div class="protocol_section_title_1" style="margin-top:0px;">Overview</div>
+      <div class="docs_section_1">
+         Bitmarkets is a protocol and example client for a decentralized marketplace which uses <a href="https://bitcoin.org">Bitcoin</a> as it's currency and <a href="https://bitmessage.org">Bitmessage</a> as it's transport protocol. Mutual security deposits are used ensure incentives are aligned for completing transactions without the need for either reputation systems or trusted 3rd parties.
+      </div>
+      <div class="protocol_section_title_1"> Message Format</div>
+      <div class="docs_section_1"> 
+         Each message contains a JSON formatted dictionary and this dictionary contains a _type field which specifies the message type and other data fields depending on the message type. Text strings are <a href="https://en.wikipedia.org/wiki/Utf8">UTF8</a> encoded and strings containing binary data are <a href="https://en.wikipedia.org/wiki/Base64">Base64</a> encoded.
+         All date fields are in <a href="https://en.wikipedia.org/wiki/Unix_time">Unix time format</a> (seconds since UTC 1970) and rounded to the nearest integer. 
+      </div>
+      
+      
+      <div class="docs_section_1">   
+      <div class="protocol_section_title_1">Message Types Index</div>
+      
+        <div class=MsgIndexSection>Posting</div>
+        <div class=MsgIndexLink><a href="#PostMsg">PostMsg</a></div>
+        <div class=MsgIndexLink><a href="#BidMsg">BidMsg</a></div>
+        <div class=MsgIndexLink><a href="#ClosePostMsg">ClosePostMsg</a></div>
+        <div class=MsgIndexLink><a href="#AcceptBidMsg">AcceptBidMsg</a></div>
+        <div class=MsgIndexLink><a href="#RejectBidMsg">RejectBidMsg</a></div>
+        
+        <div class=MsgIndexSection>Escrow Lock</div>
+        <div class=MsgIndexLink><a href="#SellLockEscrowMsg">SellLockEscrowMsg</a></div>
+        <div class=MsgIndexLink><a href="#BuyLockEscrowMsg">BuyLockEscrowMsg</a></div>
+        
+        <div class=MsgIndexSection>Delivery</div>
+        <div class=MsgIndexLink><a href="#BuyerAddressMsg">BuyerAddressMsg</a></div>
+        <div class=MsgIndexLink><a href="#BuyPaymentMsg">BuyPaymentMsg</a></div>
+        
+        <div class=MsgIndexSection>Payment</div>
+        <div class=MsgIndexLink><a href="#BuyPaymentMsg">BuyPaymentMsg</a></div>
+        <div class=MsgIndexLink><a href="#SellAcceptPaymentEscrowMsg">SellAcceptPaymentEscrowMsg</a></div>
+        
+        <div class=MsgIndexSection>Refund</div>
+        <div class=MsgIndexLink><a href="#BuyRequestRefundEscrowMsg">BuyRequestRefundEscrowMsg</a></div>
+        <div class=MsgIndexLink><a href="#SellAcceptRefundEscrowMsg">SellAcceptRefundEscrowMsg</a></div>
+        
+      </div>
+
+
+      <!--
+         <div class="docs_section_title_2">Notes</div>
+         <div class="docs_section_1"> 
+         Large field values in the examples are abbreviated with their first five characters followed by "..." for readability. The example refund messages are from a different transaction.
+                  </div>
+              -->
+      <!--
+         <div class="protocol_section_title_1">Two Party Escrow</div>
+         -->
+      <!--
+         <div class="docs_section_title_1">Messages</div>
+         <div class="docs_section_1">         
+            <img src="./images/messages.png" width=550 style="margin-top:20px; margin-left:0px; margin-right:20px; margin-bottom:0px; spacing:0px;"></img>
+         </div>
+         -->
+         
+         
+      <div class="docs_section_1">
+         <div class="protocol_section_title_1">Posting</div>
+         Sellers post sales to a particular Bitmessage channel (a publicly known public/private key pair Bitmessage address) where they are picked up and can be browsed by other clients. Using a client, potential buyers can request a purchase.  This channel model also allows for private markets where hard to guess channel names (e.g. a large random numbers) can be used to only allow those those knowing the secret channel name to send or receive channel messages. <br>
+         <div class="trigger">messages</div>
+         <div class="toggle_container">
+            <div class="block">
+               <div class="docs_section_title_2"><a name="PostMsg">PostMsg</a></div>
+               Sent from seller to Bitmarkets channel to post a sale.<br>
+               <div class="trigger">example</div>
+               <div class="toggle_container">
+                  <div class="block">
+<div class="protocol">{
+    "_type" : "PostMsg",
+    "postUuid" : "B160...",
+    "sellerAddress" : "BM-2cVr...",
+    "dateNumber" : 1409004883,
+    "payload" : {
+        "postUuid" : "B160...",
+        "regionPath" : ["North America", "US"],
+        "categoryPath" : ["Electronics", "Laptops"]
+        "title" : "Macbook Air 13” 128GB",
+        "priceInSatoshi" : 100000,
+        "sellerAddress" : "BM-2cVr...",
+        "description" : "Test",
+        "attachments" : [],
+    },
+}</div>
+                  </div>
+               </div>
+               <br>
+               <div class="docs_section_title_2"><a name="BidMsg">BidMsg</a></div>
+               Sent from buyer to seller in response to a sale post.<br>
+               <div class="trigger">example</div>
+               <div class="toggle_container">
+                  <div class="block">
+                     <div class="protocol">{
+    "_type" : "BidMsg",
+    "postUuid" : "B160...",
+    "sellerAddress" : "BM-2cVr...",
+    "buyerAddress" : "BM-2cVr...",
+    "dateNumber" : 1409004919,
+}</div>
+                  </div>
+               </div>
+               <br>    				            
+               <div class="docs_section_title_2"><a name="ClosePostMsg">ClosePostMsg</a></div>
+               Sent from seller to channel. Sent after accepting a bid or cancelling the sale in order to remove the post.<br>
+               <div class="trigger">example</div>
+               <div class="toggle_container">
+                  <div class="block">
+<div class="protocol">{
+    "_type" : "ClosePostMsg",
+    "postUuid" : "B160...",
+    "sellerAddress" : "BM-2cVr...",
+    "dateNumber" : 1409004929,
+}</div>
+                  </div>
+               </div>
+               <br>
+               <div class="docs_section_title_2"><a name="AcceptBidMsg">AcceptBidMsg</a></div>
+               Sent from seller to buyer to accept a bid. <br>
+               <div class="trigger">example</div>
+               <div class="toggle_container">
+                  <div class="block">
+<div class="protocol">{
+    "_type" : "AcceptBidMsg",
+    "postUuid" : "B160...",
+    "sellerAddress" : "BM-2cVr...",
+    "buyerAddress" : "BM-2cVr...",
+    "dateNumber" : 1409004929,
+}</div>
+                  </div>
+               </div>
+            </div>
+            <br>
+            <div class="docs_section_title_2"><a name="RejectBidMsg">RejectBidMsg</a></div>
+            Sent from seller to all potential buyers other than the one that was accepted, after accepting a bid. <br>
+            <div class="trigger">example</div>
+            <div class="toggle_container">
+               <div class="block">
+ <div class="protocol">{
+    "_type" : "RejectBidMsg",
+    "postUuid" : "B160...",
+    "sellerAddress" : "BM-2cVr...",
+    "buyerAddress" : "BM-2cVr...",
+    "dateNumber" : 1409004929,
+}</div>
+               </div>
+            </div>
+         </div>
+         <hr class=hrfade>
+         </hr>
+         <div class="protocol_section_title_1">Escrow Lock</div>
+         If the seller accepts a purchase request, buyer and seller together construct a bitcoin escrow lock transaction where each adds a security deposit and the buyer adds the payment amount. This transaction is constructed such that the funds are unspendable by both parties until both sign another transaction to release the funds. 
+         <br>
+         <div class="trigger">messages</div>
+         <div class="toggle_container">
+            <div class="block">
+               <div class="docs_section_title_2"><a name="SellLockEscrowMsg">SellLockEscrowMsg</a></div>
+               Sent from seller to buyer.
+               Contains incomplete multi-signature transaction with sellers unspent inputs to be used for their security deposit.<br>
+               <div class="trigger">example</div>
+               <div class="toggle_container">
+                  <div class="block">
+<div class="protocol">{
+    "_type" : "SellLockEscrowMsg",
+    "postUuid" : "B160..."
+    "sellerAddress" : "BM-2cVr...",
+    "buyerAddress" : "BM-2cVr...",
+    "dateNumber" : 1409005057,
+    "payload" : {
+    "inputs" : [
+        {
+            "previousOutIndex" : 0,
+            "previousTxSerializedHex" : "0100...",
+            "scriptSig" : null,
+            "type" : "BNTxIn",
+            "previousTxHash" : "0851..."
+        }
+    ],
+    "txHash" : null,
+    "outputs" : [
+    {
+        "type" : "BNTx"
+        "value" : 110000,
+        "type" : "BNTxOut",
+        "scriptPubKey" : {
+                "type" : "BNMultisigScriptPubKey"
+                "pubKeys" : [
+                    "0389...",
+                    "0389..."
+                ],
+            }
+            }
+        ],
+        "updateTime" : null,
+        "counterParty" : null,
+        "netValue" : null,
+        "serializedHex" : null,
+        "fee" : null,
+        "confirmations" : null,
+        "error" : null,
+    },
+}</div>
+                  </div>
+               </div>
+               <br>
+               <div class="docs_section_title_2"><a name="BuyLockEscrowMsg">BuyLockEscrowMsg</a></div>
+               Sent from buyer to seller. 
+               Contains the the multi-signature transaction including the buyer's inputs (for their security deposit and potential payment) and signature.
+               When the seller receives this message, they add their signature to the transaction and broadcast it to the bitcoin network. Both parties observe the Bitcoin network to see that the escrow transaction is confirmed. 
+               <div class="trigger">example</div>
+               <div class="toggle_container">
+                  <div class="block">
+<div class="protocol">{
+    "_type" : "BuyLockEscrowMsg",
+    "postUuid" : "B160...",
+    "sellerAddress" : "BM-2cVr...",
+    "buyerAddress" : "BM-2cVr...",
+    "dateNumber" : 1409005067,
+    
+    "payload" : {
+        "txHash" : "c0b1...",
+
+        "inputs" : [
+            {
+                "previousOutIndex" : 0,
+                "previousTxSerializedHex" : "0100...",
+                "scriptSig" : null,
+                "type" : "BNTxIn",
+                "previousTxHash" : "0851..."
+            },
+            {
+                "type" : "BNTxIn",
+                "previousTxHash" : "19e4...",
+                "previousOutIndex" : 0,
+                "previousTxSerializedHex" : "0100...",
+                "scriptSig" : {
+                    "type" : "BNScriptSig",
+                    "programHexBytes" : "4730...",
+                    "isMultisig" : false
+                },
+            }
+        ],
+
+        "outputs" : [
+            {
+                "type" : "BNMultisigScriptPubKey"
+                "value" : 310000,
+                "type" : "BNTxOut",
+                "scriptPubKey" : 
+                {
+                    "pubKeys" : [
+                        "0389...",
+                        "02ff..."
+                    ],
+                }
+            }
+        ],
+        
+        "type" : "BNTx"
+        "updateTime" : 0,
+        "counterParty" : null,
+        "netValue" : -320000,
+        "serializedHex" : "0100...",
+        "fee" : 10000,
+        "confirmations" : 0,
+        "error" : null,
+    },
+}
+</div>
+                  </div>
+               </div>
+               <br>
+               <div class="docs_section_title_2">Cancellation</div>
+               The client application supports canceling the lock (on both sides) by broadcasting transaction to send their own inputs back to themselves. Cancellation can effectively only work if the escrow lock was not broadcast to the Bitcoin network.<br>
+               <br>  
+               <br>  
+            </div>
+         </div>
+         <hr class=hrfade>
+         </hr>
+         <div class="protocol_section_title_1">Delivery</div>
+         After the buyer's client sees that the lock escrow transaction is confirmed in the bitcoin blockchain, they are prompted to send the seller their delivery details.
+         <div class="trigger">messages</div>
+         <div class="toggle_container">
+            <div class="block">
+               <div class="docs_section_title_2"><a name="BuyerAddressMsg">BuyerAddressMsg</a></div>
+               Sent from buyer to seller. 
+               This contains the address to which the seller should delivery the good or service. The seller can view this address from their client.
+               <div class="trigger">example</div>
+               <div class="toggle_container">
+                  <div class="block">
+<div class="protocol">{
+    "_type" : "BuyerAddressMsg",
+    "postUuid" : "B160...",
+    "sellerAddress" : "BM-2cVr...",
+    "buyerAddress" : "BM-2cVr...",
+    "dateNumber" : 1409007460,
+    "payload" : 
+    {
+        "address2" : "SF",
+        "country" : " ",
+        "addressee" : "Me",
+        "address1" : "Here"
+    },
+}
+</div>
+                  </div>
+               </div>
+               <br>  
+            </div>
+         </div>
+         <hr class=hrfade>
+         </hr>
+         <div class="protocol_section_title_1">Payment</div>
+         After the seller provides the good or service to the buyer, the buyer constructs an escrow release transaction which sends the security deposits back to their respective parties and sends the payment to the seller. The seller can then sign this transaction and broadcast it to the bitcoin network to accept payment.
+         <br>
+         <div class="trigger">messages</div>
+         <div class="toggle_container">
+            <div class="block">
+               <div class="docs_section_title_2"><a name="BuyPaymentMsg">BuyPaymentMsg</a></div>
+               Sent from buyer to seller. 
+               Contains incomplete multi-signature transaction to make payment to seller and return security deposits to respective parties.<br>
+               <div class="trigger">example</div>
+               <div class="toggle_container">
+                  <div class="block">
+<div class="protocol">{
+    "_type" : "BuyPaymentMsg",
+    "postUuid" : "B160...",
+    "sellerAddress" : "BM-2cVr...",
+    "buyerAddress" : "BM-2cVr...",
+    "dateNumber" : 1409007687,
+    
+    "payload" : {
+        "type" : "BNTx",        
+        "updateTime" : null,
+        "counterParty" : null,
+        "netValue" : null,
+        "serializedHex" : null,
+        "fee" : null,
+        "confirmations" : null,
+        "error" : null,
+        "txHash" : null,
+
+        "inputs" : 
+        [
+            {
+                "previousOutIndex" : 0,
+                "previousTxSerializedHex" : "0100...",
+                "scriptSig" : null,
+                "type" : "BNTxIn",
+                "previousTxHash" : "f9b2..."
+            }
+        ],
+        
+        "outputs" : 
+        [
+            {
+                "value" : 103333,
+                "type" : "BNTxOut",
+                "scriptPubKey" : 
+                {
+                    "address" : "1MLps...",
+                    "type" : "BNPayToAddressScriptPubKey"
+                }
+            }
+        ],
+    },
+}</div>
+                  </div>
+               </div>
+               <br>				 
+               <div class="docs_section_title_2"><a name="SellAcceptPaymentEscrowMsg">SellAcceptPaymentEscrowMsg</a></div>
+               Sent from seller to buyer with completed payment transaction. <br>
+               Buyer broadcasts this on bitcoin network.<br>
+               <div class="trigger">example</div>
+               <div class="toggle_container">
+                  <div class="block">
+<div class="protocol">{
+    "_type" : "SellAcceptPaymentMsg",
+    "postUuid" : "B160...",
+    "sellerAddress" : "BM-2cVr...",
+    "buyerAddress" : "BM-2cVr...",
+    "dateNumber" : 1409007722,
+    
+    "payload" : {
+        "type" : "BNTx",
+        "updateTime" : 0,
+        "counterParty" : null,
+        "netValue" : 299999,
+        "serializedHex" : "0100...",
+        "fee" : 10000,
+        "confirmations" : 0,
+        "error" : null,
+        
+        "inputs" : [
+            {
+                "type" : "BNTxIn",
+                "previousTxHash" : "f9b2..."
+                "previousOutIndex" : 0,
+                "previousTxSerializedHex" : "0100...",
+                "scriptSig" : 
+                {
+                    "type" : "BNScriptSig",
+                    "programHexBytes" : "0047...",
+                    "isMultisig" : true
+                },
+            }
+        ],
+    
+        "txHash" : "3178...",
+    
+        "outputs" : [
+            {
+                "value" : 103333,
+                "type" : "BNTxOut",
+                "scriptPubKey" : {
+                "address" : "1MLps...",
+                "type" : "BNPayToAddressScriptPubKey"
+            }
+            },
+            {
+                "value" : 196666,
+                "type" : "BNTxOut",
+                "scriptPubKey" : 
+                {
+                    "address" : "1AiRT...",
+                    "type" : "BNPayToAddressScriptPubKey"
+                }
+            }
+        ],
+    },
+}</div>
+</div>
+               </div>
+               <br> 
+            </div>
+         </div>
+         <hr class=hrfade>
+         </hr>
+         <div class="protocol_section_title_1">Refund</div>
+         If the good or service is not provided, the seller can construct a refund request which returns the security deposits to their respective parties and returns the payment to the buyer. If the seller chooses, they can then sign this transaction and broadcast it to the bitcoin network to refund the payment.
+         <br>
+         <div class="trigger">messages</div>
+         <div class="toggle_container">
+            <div class="block">
+               <div class="docs_section_title_2"><a name="BuyRequestRefundEscrowMsg">BuyRequestRefundEscrowMsg</a></div>
+               Sent from buyer to seller with first half of refund transaction. <br>
+               <div class="trigger">example</div>
+               <div class="toggle_container">
+                  <div class="block">
+<div class="protocol">{
+    "_type" : "BuyRefundRequestMsg",
+    "buyerAddress" : "BM-2cTEk...",
+    "sellerAddress" : "BM-2cTEk...",
+    "dateNumber" : 1410879639.567544,
+    "postUuid" : "1F343..."
+    
+    "payload" : 
+    {
+        "type" : "BNTx",
+        "updateTime" : null,
+        "counterParty" : null,
+        "netValue" : null,
+        "serializedHex" : null,
+        "fee" : null,
+        "confirmations" : null,
+        "error" : null,
+        "txHash" : null,
+        
+        "inputs" : 
+        [
+            {
+                "type" : "BNTxIn",
+                "previousOutIndex" : 0,
+                "previousTxSerializedHex" : "01000...",
+                "scriptSig" : null,
+                "previousTxHash" : "9749d..."
+            }
+        ],
+        
+        "outputs" : 
+        [
+            {
+                "type" : "BNTxOut",
+                "value" : 306666,
+                "scriptPubKey" : 
+                {
+                    "address" : "1JUFU...",
+                    "type" : "BNPayToAddressScriptPubKey"
+                }
+            }
+        ],
+    },
+}</div>
+                  </div>
+               </div>
+               <br>  
+               <div class="docs_section_title_2"><a name="SellAcceptRefundEscrowMsg">SellAcceptRefundEscrowMsg</a></div>
+               Sent from seller to buyer with completed refund transaction. <br>
+               Buyer broadcasts this on bitcoin network.<br>
+               <div class="trigger">example</div>
+               <div class="toggle_container">
+                  <div class="block">
+<div class="protocol">
+{
+    "_type" : "SellAcceptRefundRequestMsg",
+    "buyerAddress" : "BM-2cTEkZNv2...",
+    "sellerAddress" : "BM-2cTEkZNv2...",
+    "dateNumber" : 1410880002.148085,
+    "postUuid" : "1F3439..."
+    
+    "payload" : 
+    {
+        "type" : "BNTx",
+        "txHash" : "5a9f4...",
+        "updateTime" : 0,
+        "counterParty" : null,
+        "netValue" : 449999,
+        "serializedHex" : "0100000...",
+        "fee" : 10000,
+        "confirmations" : 0,
+        "error" : null,
+
+        "inputs" : 
+        [
+            {
+                "type" : "BNTxIn",
+                "previousTxHash" : "9749d...",
+                "previousOutIndex" : 0,
+                "previousTxSerializedHex" : "01000...",
+                "scriptSig" : 
+                {
+                    "type" : "BNScriptSig",
+                    "programHexBytes" : "00473...",
+                    "isMultisig" : true
+                },
+            }
+        ],
+        
+        "outputs" : 
+        [
+            {
+                "type" : "BNTxOut",
+                "value" : 306666,
+                "scriptPubKey" : 
+                {
+                    "address" : "1JUFU...",
+                    "type" : "BNPayToAddressScriptPubKey"
+                }
+            },
+            {
+                "type" : "BNTxOut",
+                "value" : 143333,
+                "scriptPubKey" : 
+                {
+                    "address" : "12875...",
+                    "type" : "BNPayToAddressScriptPubKey"
+                }
+            }
+        ],
+    },
+}</div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <hr class=hrfade>
+      </hr>
+      <br><br>
+      <div class="appsubtitle_mini">this content is in the public domain</div>
+      <br><br>
+      <br>
+   </body>
+</html>
