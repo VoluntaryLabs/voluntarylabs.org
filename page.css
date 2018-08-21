@@ -40,10 +40,12 @@
         .Page {
             margin-left: auto;
             margin-right: auto;
+            margin-bottom: 180px;
+
             padding-left: 100px;
             padding-right: 100px;
             padding-top: 180px;
-            padding-bottom: 0px;
+            padding-bottom: 180px;
             height: 100%;
             text-align: left;
 
@@ -312,13 +314,13 @@
         }
 
         a {
-            font-family: "Proxima N W01 Reg";
+            font-family: "Proxima N W01 Smbd";
             text-decoration: none;
-            color: #aaa;
+            color: #999;
         }
 
         a:hover {
-            color: #aaa;
+            color: #000;
             text-decoration: none;
         }
 
@@ -353,3 +355,5 @@
             margin-bottom: 10px;
             opacity: 0.1;
         }
+        
+        
