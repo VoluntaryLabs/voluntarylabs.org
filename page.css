@@ -344,8 +344,12 @@
 
         .AppIcon {
             display: none;
+            position: absolute;
+            left: 10%;
+            top: 80px;
             width: 65px;
             height: auto;
             padding-bottom: 30px;
             margin-bottom: 10px;
+            opacity: 0.1;
         }
