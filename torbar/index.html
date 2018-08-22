@@ -1,227 +1,56 @@
 <!DOCTYPE html>
-
 <html>
+
 <head>
-
-	<!--   Contact BM-2cTfmgGTZDtH68dNxNS7QpPXMciYKc7sCd   -->
-
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-
-	<title>Voluntary - TorBar</title>
-
-	<!-- Styling / Fonts -->
-	<link rel="stylesheet" type="text/css" href="/css/style.css" media="screen">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css" media="screen">
-
-	<!-- JS Scripts -->
-	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-	<script src="/js/kkcountdown.js" type="text/javascript"></script>
-	<script type="text/javascript" src="/js/jquery.fancybox.js"></script>
-
-	<!-- Initiate Countdown Script -->
-	<script type="text/javascript">
-            $(document).ready(function(){
-
-                $(".kkcountdown-1").kkcountdown({
-                	dayText		: ':',
-                	daysText 	: ':',
-                    hoursText	: '',
-                    minutesText	: '',
-                    secondsText	: '',
-                    displayZeroDays : true,
-                    displayDays: false,
-                    callback	: cBack,
-                    rusNumbers  :   false
-                });
-
-                $("#go").on('click', function() {
-                	var secs = $("#secs").val();
-
-                	$("#secs").parent("span").html("<strong>"+secs+"</strong>");
-
-                	$("#go").hide();
-
-                });
-
-            });
-
-            function cBack(){
-            	console.log('THE END - Function callback!');
-            }
-    </script>
-
-    <!-- Fancybox Lightbox -->
-
-    <script type="text/javascript">
-		$(document).ready(function() {
-			$('.fancybox').fancybox();
-		});
-	</script>
-
-
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=0.5, user-scalable=no">
+    <title>Voluntary.net</title>
+    <link href="../Fonts/fonts.css" rel="stylesheet" type="text/css">
+    <link href="../page.css" rel="stylesheet" type="text/css">
 </head>
 
-
 <body>
+    <div class="Page">
+        <a href="../index.html">
+            <div class="PageTitle">
+                Voluntary
+                <div class="PageTitleSuffix">Labs</div>
+            </div>
+        </a>
 
-	<!-- Main Page Elements -->
-	<div id="appcontainer">
-	<div id="vertcontainer">
-		<div id="iconcontainer">
-				
-					<a href="/bitpost">
-					<div class="linkcontainer">
-						<div id="icontainer">
-									<div class="iconbox">
-										<div class="details"><div class="iconbg1 iconshared"></div></div>
-										<div class="icontest"><img src="/images/icon1a.svg"></div>
-									</div>
+        <div class="Paragraph" style="color: #bbb">
+            Free, open source projects
+            <br> promoting voluntary interactions.
+            <br>
+            <br>
+        </div>
 
-						</div>
-						<div class="title">BitPost</div>
-					</div>
-					</a>
+        <div class="PageSubtitle">
+            <a href="../projects.html">
+                <div class="PageSubtitleComponent">Projects</div>
+            </a>
+            <div class="PageSubtitleComponentDivider">/</div>
+            <div class="PageSubtitleComponent_Selected">TorBar</div>
+        </div>
 
-<!--
+        <div class="Paragraph">
+            <div class="ProductTitle">TorBar</div>
+            <div class="ProductSubtitle">help protect net privacy from your menu bar</div>
+            <div class="ProductDescription">
+                Tor is free software and an open network that protects user's internet use against traffic analysis by bouncing communications
+                around a distributed network of relays run by volunteers all around the world.
+                <br><br> TorBar makes contributing to the Tor network easy. It adds a menu bar item that allows you to run
+                a Tor relay node (not an exit node) that uses the minimum amount of bandwidth (50kbps up/down) at the click
+                of a button. It remembers and will only run the relay on networks you've specifically enabled it to run on.
+            </div>
 
-					<div class="linkcontainer">
-						<div id="icontainer">
-									<div class="iconbox">
-										<div class="details">
-											<div class="iconbg2 iconshared"></div>
-										</div>
-										<div class="icontest"><img src="/images/icon2a.svg"></div>
-									</div>
+            <a href="binaries/TorBar.0.5.3.zip"><div class="ProductLink">Download</div></a>
+            <a href="https://github.com/VoluntaryLabs/TorBar"><div class="ProductLink">Github</div></a>
 
-						</div>
-							<div class="titleSoon">
-								<span data-time="1414368000" class="kkcountdown-1">
-									<noscript>Soon</noscript>
-								</span>
-							</div>
-					</div>
+            <img class="ProductImage" src="images/screen.png"></img>
+        </div>
 
--->
-					<a href="/bitmarkets">
-					<div class="linkcontainer">
-						<div id="icontainer">
-									<div class="iconbox">
-										<div class="details">
-											<div class="iconbg2 iconshared"></div>
-										</div>
-										<div class="icontest"><img src="/images/icon2a.svg"></div>
-									</div>
-
-						</div>
-						<div class="title">Bitmarkets</div>
-					</div>
-					</a>
-
-					<a href="/crypt">
-					<div class="linkcontainer">
-						<div id="icontainer">
-									<div class="iconbox">
-										<div class="details"><div class="iconbg3 iconshared"></div></div>
-										<div class="icontest"><img src="/images/icon3a.svg"></div>
-									</div>
-
-						</div>
-						<div class="title">Crypt</div>
-					</div>
-					</a>
-
-
-					<a href="/torbar">
-					<div class="linkcontainer">
-						<div id="icontainer">
-									<div class="iconbox">
-										<div class="details"><div class="iconbg4 iconshared"></div></div>
-										<div class="icontest"><img src="/images/icon4b.svg"></div>
-									</div>
-
-						</div>
-						<div class="title">TorBar</div>
-					</div>
-				    </a>
-
-
-					<a href="/paypub">
-					<div class="linkcontainer">
-						<div id="icontainer">
-									<div class="iconbox">
-										<div class="details">
-											<div class="iconbg5 iconshared"></div>
-										</div>
-										<div class="icontest"><img src="/images/icon5a.svg"></div>
-									</div>
-						</div>
-						<div class="title">PayPub</div>
-					</div>
-				    </a>
-
-					
-					<div class="linkcontainerright">
-						<div id="icontainer">
-									<div class="iconbox">
-										<div class="details">
-											<div class="iconbg6 iconshared"></div>
-										</div>
-										<div class="icontest"><img src="/images/icon6a.svg"></div>
-									</div>
-						</div>
-							<div class="titleSoon">
-								<span data-time="1422748800" class="kkcountdown-1">
-									<noscript>Soon</noscript>
-								</span>
-							</div>
-					</div>
-
-		</div>
-	</div>
-	</div>					
-
-					<!-- App Information -->
-
-					<div id="pagecontainer">
-						<div id="textcontainer">
-							
-							<div class="apptitle">TorBar</div>
-							<div class="appsubtitle">help protect net privacy from your menu bar</div>
-
-
-							<a class="fancybox" href="images/screen.png">
-							<div class="photocontainer">
-								<div class="photobox">
-										<div class="photodetails">
-											<div class="photoshared"><img src="images/screen_alt.png" style="width:550px;"></div>
-										</div>
-								</div>
-								<div><img src="images/screen.png" style="width:550px;"></div>
-							</div>
-							</a>
-
-
-							<a href="https://github.com/voluntarynet/TorBar"><div class="buttons left">Source</div></a>
-							<a class="fancybox" href="./binaries/TorBar.0.5.3.zip"><div class="buttons right">Download 0.5.3 for OSX</div></a>
-
-							
-							<div class="column0">
-<a href="https://www.torproject.org/">Tor</a> is free software and an open network that protects user's internet use against traffic analysis by bouncing  communications around a distributed network of relays run by volunteers all around the world.
-<br><br>
-TorBar makes contributing to the Tor network easy. It adds a menu bar item that allows you to run a Tor relay node (not an exit node) that uses the minimum amount of bandwidth (50kbps up/down) at the click of a button. It remembers and will only run the relay on networks you've specifically enabled it to run on. 
-
-							    <br><br>
-							    <font size=-1 color=#555>
-							    The TorBar.0.5.3.zip SHA256 digest is 996bd9ce9eb7d73629f3526b1bff1449864edfac9f92678300d8ee93c9f41215.
-						    </font>
-</div>
-
-						</div>
-					</div>
-
-	
-
-
+    </div>
 </body>
+
 </html>

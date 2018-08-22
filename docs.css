@@ -1,0 +1,133 @@
+
+        .protocol_section_title_1 {
+            display: block;
+            font-family: "Proxima N W01 Smbd";
+            letter-spacing: 1px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            text-transform: capitalize;
+            font-size: 15px;
+            color: #000;
+            border: 0px solid blue;
+        }
+
+        .protocol_section_title_2 {
+            display: block;
+            font-family: "Proxima N W01 Smbd";
+            letter-spacing: 1px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            text-transform: capitalize;
+            font-size: 15px;
+            color: #000;
+            border: 0px solid red;
+        }
+
+        .protocol_section_title_3 {
+            display: block;
+            font-family: "Proxima N W01 Smbd";
+            letter-spacing: 1px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            text-transform: capitalize;
+            font-size: 15px;
+            color: #000;
+            border: 0px solid green;
+        }
+
+        .docs_section_1 {
+            font-family: "Proxima N W01 Reg";
+            letter-spacing: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            text-transform: none;
+            font-size: 15px;
+            color: #000;
+            max-width: 600px;
+        }
+        
+        .docs_section_title_1 {
+            display: block;
+            font-family: "Proxima N W01 Smbd";
+            letter-spacing: 1px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            text-transform: capitalize;
+            font-size: 15px;
+            color: #000;
+            border: 0px solid green;            
+        }
+        
+        .docs_section_title_2 {
+            display: block;
+            font-family: "Proxima N W01 Smbd";
+            letter-spacing: 1px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            text-transform: capitalize;
+            font-size: 15px;
+            color: #000;
+            border: 0px solid green;            
+        }
+        
+        .MsgIndexSection {
+            display: block;
+            font-family: "Proxima N W01 Smbd";
+            letter-spacing: 1px;
+            margin-top: 20px;
+            margin-bottom: 0px;
+            margin-left: 30px;
+            text-transform: capitalize;
+            font-size: 15px;
+            color: #000;
+        }
+        
+        .MsgIndexLink {
+            display: block;
+            font-family: "Proxima N W01 Smbd";
+            letter-spacing: 0px;
+            margin-left: 40px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            text-transform: capitalize;
+            font-size: 15px;
+            color: #000;
+        }
+        
+        .protocol {
+            display: block;
+            font-family: Courier;
+            white-space: pre;           
+            font-size: 12px;
+            margin-top: 0px;
+            margin-bottom: 30px;
+            margin-left: 0px;
+        }
+        
+        .trigger {
+             display: block;
+             font-family: "Proxima N W01 Reg";
+             text-transform: lowercase;
+             margin-top: 20px;           
+             margin-bottom: 10px;           
+             margin-left: 30px;           
+         }
+        
+        .toggle_container {
+            display: block;
+            margin: 30px;
+        }
+        
+        .block {
+            display: block;
+        }
+        
+        .hrfade { 
+            display: block;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+            margin-left: auto;
+            margin-right: auto;
+            border-style: inset;
+            border-width: 1px;
+        }

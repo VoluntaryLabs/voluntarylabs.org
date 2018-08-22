@@ -1,53 +1,76 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="initial-scale=0.5, user-scalable=no">
-    <title>Voluntary.net</title>
-    <link href="../../Fonts/fonts.css" rel="stylesheet" type="text/css">
-    <link href="../../page.css" rel="stylesheet" type="text/css">
-    <link href="../../docs.css" rel="stylesheet" type="text/css">
- 
-</head>
-
-<body>
-    <div class="Page">
-        <a href="index.html">
-            <div class="PageTitle">
-                Voluntary
-                <div class="PageTitleSuffix">Labs</div>
+   <head>
+      <title>BitMarkets - Protocol</title>
+      <!-- Styling / Fonts -->
+      <link rel="stylesheet" type="text/css" href="/css2/bjqs.css" media="screen">
+      <link rel="stylesheet" type="text/css" href="/css2/style.css" media="screen">
+      <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen">
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+      <!--JS-->
+      <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+      <script src="/js/bjqs-1.3.js"></script>
+      <script src="/js/scrolling.js"></script>
+      <!-- Icons -->
+      <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png">
+      <link rel="shortcut icon" href="https://bitmarkets.org/icon_16x16.ico">
+      <!-- Getting Meta -->
+      <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+      <meta property="og:title" content="BitMarkets - P2P Marketplaces">
+      <meta property="og:url" content="https://voluntary.net/bitmarkets/">
+      <meta property="og:image" content="https://bitmarkets.org/assets/social.png">
+      <meta property="og:description" content="Description Here">
+      <meta property="og:site_name" content="BitMarkets">
+      <meta property="twitter:site" content="BitMarkets">
+      <meta property="twitter:title" content="BitMarkets - P2P Marketplaces">
+      <meta property="twitter:description" content="BitMarkets - P2P Marketplaces. Buy and sell anything with Bitcoin.">
+      <meta property="twitter:image:src" content="https://bitmarkets.org/assets/social.png">
+      <meta property="twitter:image:width" content="1200">
+      <meta property="twitter:image:height" content="1200">
+      <style>
+      .MsgIndexSection {
+          margin-left: 20px;
+          margin-top: 5px;
+          font-weight: bold;
+          color: #888;
+      }
+      .MsgIndexLink {
+          margin-left: 40px;
+      }
+      
+      .MsgIndexLink a {
+      }
+      </style>
+   </head>
+   <body>
+      <div id="container">
+      <!-- ..........Header Start.......... -->
+      <div class="header border">
+         <div class="box_990">
+            <div class="logo"><img src="/images2/logo.svg"></div>
+            <a href="../"><span class="logotext">BitMarkets</span></a>
+            <span class="logotext" style="color:#777; margin-left:10px;">Protocol</span>
+            <div class="menu menutext">
+               <!--
+                  <a href="index.html" class="linkspace">TOUR</a>
+                  <a href="info.html" class="linkspace">INFO</a>
+                  <a class="button menubutton" href="index.html#download">DOWNLOAD</a>
+                                    -->
             </div>
-        </a>
-
-        <div class="Paragraph" style="color: #bbb">
-            Free, open source projects
-            <br> promoting voluntary interactions.
-            <br>
-            <br>
-        </div>
-
-        <div class="PageSubtitle">
-            <!--
-            <a href="index.html">
-                <div class="PageSubtitleComponent">V</div>
-            </a>
-            <div class="PageSubtitleComponentDivider">/</div>
-            -->
-            <a href="../../projects.html">
-                <div class="PageSubtitleComponent">Projects</div>
-            </a>
-            <div class="PageSubtitleComponentDivider">/</div>
-            <a href="../index.html"><div class="PageSubtitleComponent">Bitmarkets</div></a>
-            <div class="PageSubtitleComponentDivider">/</div>
-            <div class="PageSubtitleComponent_Selected">protocol</div>
-
-        </div>
-
-
-
-
-    <div class="DocSectionContent">
+         </div>
+      </div>
+      <!-- ..........Header End.......... -->
+      <!-- ..........Intro Start.......... -->
+      <!-- App Information -->
+      <div id="pagecontainer" style="text-align:left;">
+         <div id="textcontainer" style="margin-bottom:0px;">
+      <!--
+         <div class="apptitle">Bitmarkets Protocol</div>
+         <div class="appsubtitle">A P2P protocol for decentralized marketplaces</div>
+                              -->
       <div class="protocol_section_title_1" style="margin-top:0px;">Overview</div>
       <div class="docs_section_1">
          Bitmarkets is a protocol and example client for a decentralized marketplace which uses <a href="https://bitcoin.org">Bitcoin</a> as it's currency and <a href="https://bitmessage.org">Bitmessage</a> as it's transport protocol. Mutual security deposits are used ensure incentives are aligned for completing transactions without the need for either reputation systems or trusted 3rd parties.
@@ -58,8 +81,7 @@
          All date fields are in <a href="https://en.wikipedia.org/wiki/Unix_time">Unix time format</a> (seconds since UTC 1970) and rounded to the nearest integer. 
       </div>
       
-       <div style="height: 10px;"></div>
-
+      
       <div class="docs_section_1">   
       <div class="protocol_section_title_1">Message Types Index</div>
       
@@ -105,20 +127,14 @@
          </div>
          -->
          
-         <br><br><br>
-         
-    <hr class=hrfade>
-
          
       <div class="docs_section_1">
          <div class="protocol_section_title_1">Posting</div>
          Sellers post sales to a particular Bitmessage channel (a publicly known public/private key pair Bitmessage address) where they are picked up and can be browsed by other clients. Using a client, potential buyers can request a purchase.  This channel model also allows for private markets where hard to guess channel names (e.g. a large random numbers) can be used to only allow those those knowing the secret channel name to send or receive channel messages. <br>
-         <!--
          <div class="trigger">messages</div>
-         -->
          <div class="toggle_container">
             <div class="block">
-               <a name="PostMsg"><div class="docs_section_title_2">PostMsg</div></a>
+               <div class="docs_section_title_2"><a name="PostMsg">PostMsg</a></div>
                Sent from seller to Bitmarkets channel to post a sale.<br>
                <div class="trigger">example</div>
                <div class="toggle_container">
@@ -142,7 +158,7 @@
                   </div>
                </div>
                <br>
-               <a name="BidMsg"><div class="docs_section_title_2">BidMsg</div></a>
+               <div class="docs_section_title_2"><a name="BidMsg">BidMsg</a></div>
                Sent from buyer to seller in response to a sale post.<br>
                <div class="trigger">example</div>
                <div class="toggle_container">
@@ -157,7 +173,7 @@
                   </div>
                </div>
                <br>    				            
-               <a name="ClosePostMsg"><div class="docs_section_title_2">ClosePostMsg</div></a>
+               <div class="docs_section_title_2"><a name="ClosePostMsg">ClosePostMsg</a></div>
                Sent from seller to channel. Sent after accepting a bid or cancelling the sale in order to remove the post.<br>
                <div class="trigger">example</div>
                <div class="toggle_container">
@@ -171,7 +187,7 @@
                   </div>
                </div>
                <br>
-               <a name="AcceptBidMsg"><div class="docs_section_title_2">AcceptBidMsg</div></a>
+               <div class="docs_section_title_2"><a name="AcceptBidMsg">AcceptBidMsg</a></div>
                Sent from seller to buyer to accept a bid. <br>
                <div class="trigger">example</div>
                <div class="toggle_container">
@@ -187,7 +203,7 @@
                </div>
             </div>
             <br>
-            <a name="RejectBidMsg"><div class="docs_section_title_2">RejectBidMsg</div></a>
+            <div class="docs_section_title_2"><a name="RejectBidMsg">RejectBidMsg</a></div>
             Sent from seller to all potential buyers other than the one that was accepted, after accepting a bid. <br>
             <div class="trigger">example</div>
             <div class="toggle_container">
@@ -207,12 +223,10 @@
          <div class="protocol_section_title_1">Escrow Lock</div>
          If the seller accepts a purchase request, buyer and seller together construct a bitcoin escrow lock transaction where each adds a security deposit and the buyer adds the payment amount. This transaction is constructed such that the funds are unspendable by both parties until both sign another transaction to release the funds. 
          <br>
-         <!--
          <div class="trigger">messages</div>
-         -->
          <div class="toggle_container">
             <div class="block">
-               <a name="SellLockEscrowMsg"><div class="docs_section_title_2">SellLockEscrowMsg</div></a>
+               <div class="docs_section_title_2"><a name="SellLockEscrowMsg">SellLockEscrowMsg</a></div>
                Sent from seller to buyer.
                Contains incomplete multi-signature transaction with sellers unspent inputs to be used for their security deposit.<br>
                <div class="trigger">example</div>
@@ -261,7 +275,7 @@
                   </div>
                </div>
                <br>
-               <a name="BuyLockEscrowMsg"><div class="docs_section_title_2">BuyLockEscrowMsg</div></a>
+               <div class="docs_section_title_2"><a name="BuyLockEscrowMsg">BuyLockEscrowMsg</a></div>
                Sent from buyer to seller. 
                Contains the the multi-signature transaction including the buyer's inputs (for their security deposit and potential payment) and signature.
                When the seller receives this message, they add their signature to the transaction and broadcast it to the bitcoin network. Both parties observe the Bitcoin network to see that the escrow transaction is confirmed. 
@@ -338,12 +352,10 @@
          </hr>
          <div class="protocol_section_title_1">Delivery</div>
          After the buyer's client sees that the lock escrow transaction is confirmed in the bitcoin blockchain, they are prompted to send the seller their delivery details.
-         <!--
          <div class="trigger">messages</div>
-         -->
          <div class="toggle_container">
             <div class="block">
-               <a name="BuyerAddressMsg"><div class="docs_section_title_2">BuyerAddressMsg</div></a>
+               <div class="docs_section_title_2"><a name="BuyerAddressMsg">BuyerAddressMsg</a></div>
                Sent from buyer to seller. 
                This contains the address to which the seller should delivery the good or service. The seller can view this address from their client.
                <div class="trigger">example</div>
@@ -374,12 +386,10 @@
          <div class="protocol_section_title_1">Payment</div>
          After the seller provides the good or service to the buyer, the buyer constructs an escrow release transaction which sends the security deposits back to their respective parties and sends the payment to the seller. The seller can then sign this transaction and broadcast it to the bitcoin network to accept payment.
          <br>
-         <!--
          <div class="trigger">messages</div>
-         -->
          <div class="toggle_container">
             <div class="block">
-               <a name="BuyPaymentMsg"><div class="docs_section_title_2">BuyPaymentMsg</div></a>
+               <div class="docs_section_title_2"><a name="BuyPaymentMsg">BuyPaymentMsg</a></div>
                Sent from buyer to seller. 
                Contains incomplete multi-signature transaction to make payment to seller and return security deposits to respective parties.<br>
                <div class="trigger">example</div>
@@ -431,7 +441,7 @@
                   </div>
                </div>
                <br>				 
-               <a name="SellAcceptPaymentEscrowMsg"><div class="docs_section_title_2">SellAcceptPaymentEscrowMsg</div></a>
+               <div class="docs_section_title_2"><a name="SellAcceptPaymentEscrowMsg">SellAcceptPaymentEscrowMsg</a></div>
                Sent from seller to buyer with completed payment transaction. <br>
                Buyer broadcasts this on bitcoin network.<br>
                <div class="trigger">example</div>
@@ -502,12 +512,10 @@
          <div class="protocol_section_title_1">Refund</div>
          If the good or service is not provided, the seller can construct a refund request which returns the security deposits to their respective parties and returns the payment to the buyer. If the seller chooses, they can then sign this transaction and broadcast it to the bitcoin network to refund the payment.
          <br>
-         <!--
          <div class="trigger">messages</div>
-         -->
          <div class="toggle_container">
             <div class="block">
-               <a name="BuyRequestRefundEscrowMsg"><div class="docs_section_title_2">BuyRequestRefundEscrowMsg</div></a>
+               <div class="docs_section_title_2"><a name="BuyRequestRefundEscrowMsg">BuyRequestRefundEscrowMsg</a></div>
                Sent from buyer to seller with first half of refund transaction. <br>
                <div class="trigger">example</div>
                <div class="toggle_container">
@@ -559,7 +567,7 @@
                   </div>
                </div>
                <br>  
-               <a name="SellAcceptRefundEscrowMsg"><div class="docs_section_title_2">SellAcceptRefundEscrowMsg</div></a>
+               <div class="docs_section_title_2"><a name="SellAcceptRefundEscrowMsg">SellAcceptRefundEscrowMsg</a></div>
                Sent from seller to buyer with completed refund transaction. <br>
                Buyer broadcasts this on bitcoin network.<br>
                <div class="trigger">example</div>
@@ -624,11 +632,16 @@
         ],
     },
 }</div>
+                  </div>
                </div>
             </div>
          </div>
       </div>
+      <hr class=hrfade>
+      </hr>
+      <br><br>
+      <div class="appsubtitle_mini">this content is in the public domain</div>
+      <br><br>
       <br>
-</body>
-
+   </body>
 </html>

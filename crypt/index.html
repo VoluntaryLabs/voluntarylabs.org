@@ -1,235 +1,55 @@
 <!DOCTYPE html>
-
 <html>
+
 <head>
-
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="initial-scale=0.5, user-scalable=no">
-
-	<title>Voluntary - Crypt</title>
-
-	<!-- Styling / Fonts -->
-	<link rel="stylesheet" type="text/css" href="/css/style.css" media="screen">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css" media="screen">
-
-	<!-- JS Scripts -->
-	<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-	<script src="/js/kkcountdown.js" type="text/javascript"></script>
-	<script type="text/javascript" src="/js/jquery.fancybox.js"></script>
-
-	<!-- Initiate Countdown Script -->
-	<script type="text/javascript">
-            $(document).ready(function(){
-
-                $(".kkcountdown-1").kkcountdown({
-                	dayText		: ':',
-                	daysText 	: ':',
-                    hoursText	: '',
-                    minutesText	: '',
-                    secondsText	: '',
-                    displayZeroDays : true,
-                    displayDays: false,
-                    callback	: cBack,
-                    rusNumbers  :   false
-                });
-
-                $("#go").on('click', function() {
-                	var secs = $("#secs").val();
-
-                	$("#secs").parent("span").html("<strong>"+secs+"</strong>");
-
-                	$("#go").hide();
-
-                });
-
-            });
-
-            function cBack(){
-            	console.log('THE END - Function callback!');
-            }
-    </script>
-
-    <!-- Fancybox Lightbox -->
-
-    <script type="text/javascript">
-		$(document).ready(function() {
-			$('.fancybox').fancybox();
-		});
-	</script>
-
-
+    <title>Voluntary.net</title>
+    <link href="../Fonts/fonts.css" rel="stylesheet" type="text/css">
+    <link href="../page.css" rel="stylesheet" type="text/css">
 </head>
 
-
 <body>
+    <div class="Page">
+        <a href="../index.html">
+            <div class="PageTitle">
+                Voluntary
+                <div class="PageTitleSuffix">Labs</div>
+            </div>
+        </a>
 
+        <div class="Paragraph" style="color: #bbb">
+            Free, open source projects
+            <br> promoting voluntary interactions.
+            <br>
+            <br>
+        </div>
 
-	<!-- Main Page Elements -->
-	<div id="appcontainer">
-	<div id="vertcontainer">
-		<div id="iconcontainer">
-				
+        <div class="PageSubtitle">
+            <a href="../projects.html">
+                <div class="PageSubtitleComponent">Projects</div>
+            </a>
+            <div class="PageSubtitleComponentDivider">/</div>
+            <div class="PageSubtitleComponent_Selected">Crypt</div>
+        </div>
 
+        <div class="Paragraph">
+            <div class="ProductTitle">Crypt</div>
+            <div class="ProductSubtitle">drag and drop file encryption</div>
+            <div class="ProductDescription">
 
+                A simple desktop app for encrypting and decrypting files and folders which uses AES256/CBC encryption and an open file format
+                that can be decrypted on any platform via the command line using openssl. Internationalized for english,
+                french and german.
+            </div>
 
-					<a href="/bitpost">
-					<div class="linkcontainer">
-						<div id="icontainer">
-									<div class="iconbox">
-										<div class="details"><div class="iconbg1 iconshared"></div></div>
-										<div class="icontest"><img src="/images/icon1a.svg"></div>
-									</div>
+            <a href="binaries/Crypt3_20100429.zip"><div class="ProductLink">Download</div></a>
+            <a href="https://github.com/VoluntaryLabs/Crypt"><div class="ProductLink">Github</div></a>
 
-						</div>
-						<div class="title">Bitpost</div>
-					</div>
-					</a>
+            <img class="ProductImage" src="images/screen.png"></img>
+        </div>
 
-
-<!--
-
-					<div class="linkcontainer">
-						<div id="icontainer">
-									<div class="iconbox">
-										<div class="details">
-											<div class="iconbg2 iconshared"></div>
-										</div>
-										<div class="icontest"><img src="/images/icon2a.svg"></div>
-									</div>
-
-						</div>
-							<div class="titleSoon">
-								<span data-time="1414368000" class="kkcountdown-1">
-									<noscript>Soon</noscript>
-								</span>
-							</div>
-					</div>
-
--->
-					<a href="/bitmarkets">
-					<div class="linkcontainer">
-						<div id="icontainer">
-									<div class="iconbox">
-										<div class="details">
-											<div class="iconbg2 iconshared"></div>
-										</div>
-										<div class="icontest"><img src="/images/icon2a.svg"></div>
-									</div>
-
-						</div>
-						<div class="title">Bitmarkets</div>
-					</div>
-					</a>
-                    
-					<a href="/crypt">
-					<div class="linkcontainer">
-						<div id="icontainer">
-									<div class="iconbox">
-										<div class="details"><div class="iconbg3 iconshared"></div></div>
-										<div class="icontest"><img src="/images/icon3b.svg"></div>
-									</div>
-
-						</div>
-						<div class="title">Crypt</div> 
-					</div>
-					</a>
-
-					<a href="/torbar">
-					<div class="linkcontainer">
-						<div id="icontainer">
-									<div class="iconbox">
-										<div class="details">
-											<div class="iconbg4 iconshared"></div>
-										</div>
-										<div class="icontest"><img src="/images/icon4a.svg"></div>
-									</div>
-
-						</div>
-										<div class="title">TorBar</div>
-
-					</div>
-					</a>
-
-
-					<a href="/paypub">
-					<div class="linkcontainer">
-						<div id="icontainer">
-									<div class="iconbox">
-										<div class="details">
-											<div class="iconbg5 iconshared"></div>
-										</div>
-										<div class="icontest"><img src="/images/icon5a.svg"></div>
-									</div>
-
-						</div>
-									<div class="title">PayPub</div>
-
-					</div>
-				    </a>
-
-					
-					<div class="linkcontainerright">
-						<div id="icontainer">
-									<div class="iconbox">
-										<div class="details">
-											<div class="iconbg6 iconshared"></div>
-										</div>
-										<div class="icontest"><img src="/images/icon6a.svg"></div>
-									</div>
-						</div>
-							<div class="titleSoon">
-								<span data-time="1422748800" class="kkcountdown-1">
-									<noscript>Soon</noscript>
-								</span>
-							</div>
-					</div>
-
-		</div>
-	</div>
-	</div>					
-
-					<!-- App Information --> 
-
-					<div id="pagecontainer">
-						<div id="textcontainer">
-							
-							<div class="apptitle">Crypt</div>
-							<div class="appsubtitle">drag and drop file encryption</div>
-
-							  
-							<a class="fancybox" href="images/screen.jpg">
-							<div class="photocontainer">
-								<div class="photobox">
-										<div class="photodetails">
-											<div class="photoshared"><img src="images/screen_alt.jpg" style="width:550px;"></div>
-										</div>
-								</div>
-								<div><img src="images/screen.jpg" style="width:550px;"></div>
-							</div>
-							</a>
-
-
-							<a href="https://github.com/Voluntarynet/Crypt"><div class="buttons left">Source</div></a>
-							<a class="fancybox" href="./binaries/Crypt3_20100429.zip"><div class="buttons right">Download for OSX</div></a>
-
-						
-                            <div class="docs_section_1">
-							   A simple desktop app for encrypting and decrypting files and folders which
-							   uses AES256/CBC encryption and an open file format that can be decrypted on any platform via the command line using <a href="https://www.openssl.org/">openssl</a>. Internationalized for english, french and german.
-							
-                               <br><br>
-							    <font size=-1 color=#555>
-							    The Crypt3_20100429.zip SHA256 digest is e9e82ad331fe26a26ddb9625a9e1ac8e65086770c1abf4bfa503c8336bdf37bd.
-						    </font>
-							   </div>	
-
-						</div>
-					</div>
-
-
-	
-
-
+    </div>
 </body>
+
 </html>

@@ -1,69 +1,65 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="initial-scale=0.5, user-scalable=no">
-    <title>Voluntary.net</title>
-    <link href="../../Fonts/fonts.css" rel="stylesheet" type="text/css">
-    <link href="../../page.css" rel="stylesheet" type="text/css">
-    <link href="../../docs.css" rel="stylesheet" type="text/css">
- 
-    <style>
-    .Box {
-        font-family: "Proxima N W01 Reg";
-        font-size: 13px;
-        display: table-cell; 
-        vertical-align: middle; 
-        width: 200px; 
-        border: 1px solid white; 
-        color: white; 
-        background-color: #000;
-        text-align: center; 
-        padding-top: 5px;
-        padding-bottom: 7px;
-    }    
-    
-    </style>
-</head>
-
-<body>
-    <div class="Page">
-        <img class="AppIcon" src="./images/voluntaryapp_black.svg"></img>
-        <a href="index.html">
-            <div class="PageTitle">
-                Voluntary
-                <div class="PageTitleSuffix">Labs</div>
+   <head>
+      <title>BitMarkets - White Paper</title>
+      <!-- Styling / Fonts -->
+      <link rel="stylesheet" type="text/css" href="/css2/bjqs.css" media="screen">
+      <link rel="stylesheet" type="text/css" href="/css2/style.css" media="screen">
+      <link rel="stylesheet" type="text/css" href="/css/style.css" media="screen">
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600' rel='stylesheet' type='text/css'>
+      <!--JS-->
+      <script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+      <script src="/js/bjqs-1.3.js"></script>
+      <script src="/js/scrolling.js"></script>
+      <!-- Icons -->
+      <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-114.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-144.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144.png">
+      <link rel="shortcut icon" href="https://bitmarkets.org/icon_16x16.ico">
+      <!-- Getting Meta -->
+      <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+      <meta property="og:title" content="BitMarkets - P2P Marketplaces">
+      <meta property="og:url" content="https://voluntary.net/bitmarkets/">
+      <meta property="og:image" content="https://bitmarkets.org/assets/social.png">
+      <meta property="og:description" content="Description Here">
+      <meta property="og:site_name" content="BitMarkets">
+      <meta property="twitter:site" content="BitMarkets">
+      <meta property="twitter:title" content="BitMarkets - P2P Marketplaces">
+      <meta property="twitter:description" content="BitMarkets - P2P Marketplaces. Buy and sell anything with Bitcoin.">
+      <meta property="twitter:image:src" content="https://bitmarkets.org/assets/social.png">
+      <meta property="twitter:image:width" content="1200">
+      <meta property="twitter:image:height" content="1200">
+   </head>
+   <body>
+      <div id="container">
+      <!-- ..........Header Start.......... -->
+      <div class="header border">
+         <div class="box_990">
+            <div class="logo"><img src="/images2/logo.svg"></div>
+            <a href="../"><span class="logotext">BitMarkets</span></a>
+            <span class="logotext" style="color:#777; margin-left:10px;">White Paper</span>
+            <div class="menu menutext">
+               <!--
+                  <a href="index.html" class="linkspace">TOUR</a>
+                  <a href="info.html" class="linkspace">INFO</a>
+                  <a class="button menubutton" href="index.html#download">DOWNLOAD</a>
+                                    -->
             </div>
-        </a>
-
-        <div class="Paragraph" style="color: #bbb">
-            Free, open source projects
-            <br> promoting voluntary interactions.
-            <br>
-            <br>
-        </div>
-
-        <div class="PageSubtitle">
+         </div>
+      </div>
+      <!-- ..........Header End.......... -->
+      <!-- ..........Intro Start.......... -->
+      <!-- App Information -->
+      <div id="pagecontainer" style="text-align:left;">
+         <div id="textcontainer" style="margin-bottom:0px;">
+             
+            <!-- App Information -->
             <!--
-            <a href="index.html">
-                <div class="PageSubtitleComponent">V</div>
-            </a>
-            <div class="PageSubtitleComponentDivider">/</div>
-            -->
-            <a href="projects.html">
-                <div class="PageSubtitleComponent">Projects</div>
-            </a>
-            <div class="PageSubtitleComponentDivider">/</div>
-            <a href="bitmarkets.html"><div class="PageSubtitleComponent">Bitmarkets</div></a>
-            <div class="PageSubtitleComponentDivider">/</div>
-            <div class="PageSubtitleComponent_Selected">White paper</div>
-
-        </div>
-
-
-
- <div class="docs_section_title_1" style="margin-top:0px;">Introduction</div>
+               <div class="apptitle">Bitmarkets</div>
+               <div class="appsubtitle">private decentralized marketplaces</div>
+               -->
+            <div class="docs_section_title_1" style="margin-top:0px;">Introduction</div>
             <div class="docs_section_1">
                <br>
                Bitmarkets is an open source protocol and free client for a decentralized marketplace which uses <a href="https://bitcoin.org/">Bitcoin</a> as its currency and <a href="https://bitmessage.org/">Bitmessage</a> as its communications network. Mutual security deposits between buyer and seller on individual transactions are used to ensure incentives are aligned for completing market transactions without the need for either reputation systems or 3rd party escrow agents.
@@ -88,55 +84,8 @@
             <div class="docs_section_1"></div>
             <div class="docs_section_title_2">Architecture</div>
             <a name="Architecture"></a>
-            <div class="docs_section_2">
-                <div style="position: relative; height: 200px; width: 500px; border: 0px solid #eee; margin-top: 10px;">
-
-                    <div style="position: relative; width: 200px; height: 100px; border: 0px dashed red;">
-                        <div class="Box" style="position: absolute; left: 0px; top: 0px; width: 200px;">
-                            Bitmarkets client
-                        </div>        
-                        <div class="Box" style="position: absolute; left: 0px; top: 31px; width: 99px;">
-                            Bitmessage
-                        </div>        
-                        <div class="Box" style="position: absolute; left: 100px; top: 31px; width: 100px;">
-                            BitcoinJ
-                        </div>  
-                        <div class="Box" style="position: absolute; left: 0px; top: 62px; width: 200px;">
-                            Tor
-                        </div> 
-                        <div class="Box" style="position: absolute; left: 100px; top: 94px; width: 2px; height: 30px;">
-                        </div>       
-                    </div>
-
-                    <div style="position: absolute; top: 0px; right: 0px; width: 200px; height: 100px; border: 0px dashed red;">
-                        <div class="Box" style="position: absolute; left: 0px; top: 0px; width: 200px;">
-                            Bitmarkets client
-                        </div>        
-                        <div class="Box" style="position: absolute; left: 0px; top: 31px; width: 99px;">
-                            Bitmessage
-                        </div>        
-                        <div class="Box" style="position: absolute; left: 100px; top: 31px; width: 100px;">
-                            BitcoinJ
-                        </div>  
-                        <div class="Box" style="position: absolute; left: 0px; top: 62px; width: 200px;">
-                            Tor
-                        </div> 
-                        <div class="Box" style="position: absolute; left: 100px; top: 94px; width: 2px; height: 30px;">
-                        </div>     
-                    </div>
-
-                    <div style="position: absolute; left: 0px; top: 120px; width: 500px; height: 200px; border: 0px dashed red;">
-                        <div class="Box" style="position: absolute; left: 0px; top: 0px; width: 500px;">
-                            Tor network
-                        </div>      
-                        <div class="Box" style="position: absolute; left: 0px; top: 30px; width: 500px;">
-                            Bitmessage and Bitcoin networks
-                        </div>  
-                    </div>
-                </div>    
-                <!--     
-               <img src="bitmarkets/whitepaper/images/arch.png" width=550 style="margin-top:20px; margin-left:0px; margin-right:20px; spacing:0px;"></img>
-                -->
+            <div class="docs_section_2">         
+               <img src="images/arch.png" width=550 style="margin-top:20px; margin-left:0px; margin-right:20px; spacing:0px;"></img>
             </div>
             <!--  
                <div class="docs_section_title_2">Messages</div>
@@ -216,7 +165,7 @@
                   <br><br>
                   In a third party escrow system the buyer and seller ask a third trusted party (an escrow agent) to receive payment from the buyer before the item is delivered and to then release the payment to the seller after the item is delivered. If there is a dispute about the quality of the item or whether it was delivered, the third party acts as a mediator and decides whether to send the payment or refund the buyer.
                   Some of the problems with this model include:
-                  <ul>
+                  <ol>
                      <li> Unless escrow agent receives  the item before forwarding it to the buyer and has the expertise to verify the quality of the item, they have no means of fairly mediating a dispute. This problem becomes much worse when services are being exchanged. Proof of package delivery doesn't verify what was delivered or it's quality and photos from the buyer could be of another item, etc.
                         <br><br>
                         Credit cards and centralized marketplaces seem like existence proofs of working escrow agents but they are non-anonymous, do not resolve disputes fairly (as most small merchants can tell you) and are known to break in markets with high fraud potential (e.g. third world countries, porn, etc).
@@ -229,7 +178,7 @@
                      <li> Escrow agent expenses in the form of labor and risk are passed on to the buyer and seller. </li>
                      <br>
                      <li> Finding a trustworthy agent requires a reputation system and building reputation systems in anonymous networks remains an unsolved problem (see next section). </li>
-                  </ul>
+                  </ol>
                   Fortunately, two party escrow made possible by Bitcoin's multi-signature transactions can solve all of these problems.
                </div>
                <div class="docs_section_title_2">Where Reputation Systems Are Required</div>
@@ -238,7 +187,7 @@
                   For transactions involving goods delivery of the size typical for a users cash transactions, we suspect two party escrow will be sufficient to address the problem of trust. 
                   But there are classes of transactions where reputation systems seem to be required. Some examples include:
                   <br>
-                  <ul>
+                  <ol>
                      <li>
                         Larger transactions such as those of the size that typically involve debt (e.g. purchasing a car), where the necessary size of security deposits for two party escrow may be prohibitive. 
                      </li>
@@ -258,14 +207,14 @@
                      <li>
                         Transactions where a buyer has strong concerns about exposing their physical address to a potentially malicious seller. 
                      </li>
-                  </ul>
+                  </ol>
                   </dive>
                   <div class="docs_section_title_2">Reputation System Failures</div>
                   <a name="ReputationSystemFailures"></a>
                   <div class="docs_section_1">
                      Although reputation systems are useful, there are many potential ways for malicious agents to attack them. Systems that do not address these may be worse than no reputation system at all as they can result in users extending trust to untrustworthy parties or unwittingly exposing their real identities.
                      These attacks include:
-                     <ul>
+                     <ol>
                         <li>
                            Build false trust: Posting fake positive reviews by creating many identities and performing transactions and posting reviews between them.  
                         </li>
@@ -289,7 +238,7 @@
                         <li>
                            Identity leaks via network analysis: Combining known real world connection data (e.g. social network, business or friend networks) with the reputation system's network of reviews and even a single exposed real identity may provide strong hints to the real identities to other relatively direct connections. 
                         </li>
-                     </ul>
+                     </ol>
                      While the Bitcoin blockchain and cryptographic signatures could provide a means of externally verifying trade history, when trades where done and whether or not they were completed, it doesn't address the fake review problem and it makes the system potentially more vulnerable to identity leaks. As far as we know, there are no existing reputation systems that sufficiently address any of these issues.
                   </div>
                   <div class="docs_section_title_2">Trust Network Challenges</div>
@@ -306,7 +255,7 @@
                      The first version of the Bitmarkets client is configured to use a 1-1 deposit/price ratio. So for the sale of an item costing X, the buyer would put up 2X (1X for payment and 1X for deposit) and the seller 1X so a total of 3X would be locked in escrow. 
                      <br><br>
                      While later versions will may allow this to be adjustable per transaction, the current fixed ratio was chosen to meet the requirements that:
-                     <ul>
+                     <ol>
                         <li> Deposits are large enough that consistently malicious buyers or sellers will on average go bankrupt before destroying the market assuming their bankroll is small compared to the volume of the market.</li>
                         <br>
                         <li> Deposits are large enough incentive to ensure seller will deliver an acceptable product and that buyer releases escrow at end of transaction (signing a payment or refund request).</li>
@@ -316,7 +265,7 @@
                         <li> Deposits are small enough that locking the funds over the period of the transaction wouldn't be a burden for either party in the sizes in which buyer might make cash purchases.</li>
                         <br>
                         <li> Simple enough to be easily understood by users.</li>
-                     </ul>
+                     </ol>
                      The 1-1 ratio seems to be the simplest choice which meets all of these requirements.
                      <br><br>
                      <div class="appsubtitle_mini">this content is in the public domain</div>
@@ -327,7 +276,6 @@
                </div>
             </div>
          </div>
-         
-</body>
-
+      </div>
+   </body>
 </html>
