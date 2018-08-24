@@ -78,6 +78,17 @@
             margin-left: 1px;
         }
 
+        .PageTagline {
+            font-family: "Proxima N W01 Reg", "Open Sans", "Helvetica", "Sans-Serif";
+            display: block;
+            color: #bbb;
+            margin-top: 20px;
+            margin-bottom: 2.5em;
+            font-size: 15px;
+            line-height: 1.5;
+
+        }
+        
         .PageSubtitle {
             font-family: "Proxima N W01 Smbd", "Open Sans", "Helvetica", "Sans-Serif";
             display: block;
@@ -248,7 +259,7 @@
         .ProductDescription_SectionTitle {
             display: block;
             font-family: "Proxima N W01 Smbd";
-            letter-spacing: 1px;
+            letter-spacing: 0px;
             margin-top: 20px;
             margin-bottom: 0px;
             text-transform: capitalize;
